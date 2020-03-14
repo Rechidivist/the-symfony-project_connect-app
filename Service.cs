@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -12,9 +13,22 @@ namespace SiteConnectorService
 
         public Service()
         {
-            var factory = new ConnectionFactory() { HostName = "localhost", Port=5627};
+            string host;
+            int port;
+            try
+            {
+                host = ConfigurationManager.AppSettings["ServerHost"].ToString();
+                port = int.Parse(ConfigurationManager.AppSettings["ServerPort"].ToString());
+            }catch
+            {
+                throw new Exception("Неверный конфиг");
+            }
+
+
+            var factory = new ConnectionFactory() { HostName = host, Port = port };
             connection = factory.CreateConnection();
             channel = connection.CreateModel();
+
 
             var consumer = new EventingBasicConsumer(channel);
             channel.BasicConsume(consumer, "controllerQueue",true);

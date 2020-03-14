@@ -20,9 +20,17 @@ namespace SiteConnectorService
                 });
                 x.RunAsLocalSystem();
 
+                x.UnhandledExceptionPolicy = Topshelf.Runtime.UnhandledExceptionPolicyCode.LogErrorOnly;
+
                 x.SetDescription("Сервис обновляющий инфу с сайта");
                 x.SetDisplayName("The HardWorker SERIAL <-> SITE interface");
                 x.SetServiceName("HardWorker");
+
+                x.OnException((ex) =>
+                {
+                    Console.WriteLine("Exception occured Main : " + ex.ToString());
+                    Console.ReadKey();
+                });
             });                                                            
 
             var exitCode = (int)Convert.ChangeType(rc, rc.GetTypeCode()); 
