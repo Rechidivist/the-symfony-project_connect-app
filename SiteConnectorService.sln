@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteConnectorService", "SiteConnectorService.csproj", "{1A34EF55-9D48-4917-AF11-39A21108DB78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A34EF55-9D48-4917-AF11-39A21108DB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A34EF55-9D48-4917-AF11-39A21108DB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A34EF55-9D48-4917-AF11-39A21108DB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A34EF55-9D48-4917-AF11-39A21108DB78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E5C2A1B-DE6D-4F46-BCC5-8DE29153A2C6}
+	EndGlobalSection
+EndGlobal
